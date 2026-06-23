@@ -1,0 +1,11 @@
+{
+  "name": "COSEY STAYS",
+  "short_name": "Cosey",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fb923c",
+  "icons": [
+    {"src":"images/favicon.svg","sizes":"any","type":"image/svg+xml"}
+  ]
+}

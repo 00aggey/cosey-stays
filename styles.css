@@ -1,0 +1,62 @@
+/* Design system & typography */
+:root{
+	--primary: #fb923c;
+	--accent: #f97316;
+	--muted: #6b7280;
+	--bg: #0f172a;
+	--card: rgba(255,255,255,0.04);
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;600&display=swap');
+html,body{height:100%;}
+body{
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color: #111827;
+	background: linear-gradient(180deg, rgba(15,23,42,0.85), rgba(7,10,20,0.9)), url('images/bcg.jpg') center/cover no-repeat fixed;
+}
+
+/* Hero */
+.hero-overlay{backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:14px;padding:3rem}
+.hero-title{font-family: 'Playfair Display', serif;font-size:2.75rem;color:transparent;background-clip:text;background-image:linear-gradient(90deg,var(--primary),var(--accent));}
+.hero-sub{color:rgba(255,255,255,0.9);opacity:0.95}
+
+/* Navigation */
+nav{backdrop-filter: blur(6px)}
+nav a{letter-spacing:0.2px}
+
+/* Cards and slideshow */
+.card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+.slide .card-title{font-weight:700;color:#fff}
+
+/* Gallery grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;cursor:pointer;transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
+.gallery-grid img:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:linear-gradient(rgba(2,6,23,0.8),rgba(2,6,23,0.92));display:flex;align-items:center;justify-content:center;padding:1rem;z-index:1000;visibility:hidden;opacity:0;transition:opacity .18s}
+.lightbox.visible{visibility:visible;opacity:1}
+.lightbox img{max-width:92%;max-height:78%;border-radius:12px;box-shadow:0 20px 60px rgba(2,6,23,0.7)}
+.lightbox .caption{color:#fff;margin-top:.5rem;text-align:center;font-weight:600}
+
+/* Lightbox controls */
+.lightbox .lb-controls{display:flex;gap:1rem;justify-content:center;margin-top:.5rem}
+.lightbox .lb-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:.4rem .6rem;border-radius:8px;cursor:pointer}
+.lightbox .lb-close{position:absolute;right:18px;top:18px;background:transparent;border:none;color:#fff;font-size:22px}
+
+/* Slideshow dots and visible slide */
+.dot.active{background-color:rgba(255,255,255,0.95) !important;transform:scale(1.15)}
+.slide{opacity:0;transform:scale(.995);transition:opacity .45s ease, transform .45s cubic-bezier(.2,.9,.2,1)}
+.slide.visible{opacity:1;transform:scale(1)}
+
+/* Buttons */
+.btn-pill{padding:0.6rem 1.2rem;border-radius:9999px}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08)}
+.btn-ghost:hover{background:rgba(255,255,255,0.03);transform:translateY(-3px)}
+
+.site-footer{opacity:0.95;color:rgba(255,255,255,0.85);padding:2rem 1rem;margin-top:3rem;font-size:0.95rem}
+
+/* Footer */
+.site-footer{opacity:0.9;color:rgba(255,255,255,0.8);padding:2rem 1rem;margin-top:3rem}
+
+/* small responsive tweaks */
+@media (max-width:640px){.gallery-grid img{height:140px}.hero-title{font-size:2rem}}
